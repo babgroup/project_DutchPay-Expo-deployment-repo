@@ -1,0 +1,17 @@
+services:
+  expo:
+    build: .
+    ports:
+      - "19000:19000"   # 앱 JS 번들용
+      - "19001:19001"   # 터널 안 써야 필요함
+      - "19002:19002"   # Devtools
+    volumes:
+      - .:/app
+      - expo-cache:/root/.expo
+    environment:
+      - EXPO_DEVTOOLS_LISTEN_ADDRESS=0.0.0.0
+    stdin_open: true
+    tty: true
+
+volumes:
+  expo-cache:
