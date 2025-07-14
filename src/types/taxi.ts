@@ -1,0 +1,1 @@
+// /taxi 관련 types
