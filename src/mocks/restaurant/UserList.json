@@ -1,0 +1,22 @@
+{
+  "participants": [
+    {
+      "user_id": 10,
+      "name": "박효진",
+      "student_number": 240000,
+      "is_creator": true
+    },
+    {
+      "user_id": 12,
+      "name": "남우준",
+      "student_number": 240001,
+      "is_creator": false
+    },
+    {
+      "user_id": 15,
+      "name": "강희준",
+      "student_number": 240002,
+      "is_creator": false
+    }
+  ]
+}

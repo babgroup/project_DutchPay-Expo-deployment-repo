@@ -1,0 +1,21 @@
+{
+  "MemberFoodFareRoom": {
+    "food_join_user_id": 1,
+    "restaurant_name": "BHC 왜관점",
+    "deadline": "2025-07-28T20:00:00",
+    "delivery_fee": 6000,
+    "member_count":3,   
+    "my_order_items": [
+      {
+        "item_name": "뿌링클 순살",
+        "quantity": 1,
+        "price": 20000
+      },
+      {
+        "item_name": "뿌링클 순살",
+        "quantity": 1,
+        "price": 20000
+      }
+    ]
+  }
+}

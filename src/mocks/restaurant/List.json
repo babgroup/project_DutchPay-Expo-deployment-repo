@@ -1,0 +1,11 @@
+{
+	"room":[
+		{
+			"id":1,
+			"restaurantName":"두찜",
+			"deliveryFee":10000,
+			"imageUrl":"http://example.com",
+			"businessHours":"2025:07:07TZ15:32:12"		
+		}
+	]
+}

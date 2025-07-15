@@ -1,0 +1,21 @@
+{
+	"foodRoomLeader":
+		{
+			"restaurant_name": "BHC",
+			"minUser": 4, 
+			"deadline":"2025:07:07TZ15:30:00",
+			"deliveryFee": 10000,
+			"user":[{
+				"userId": 2101008,
+				"userName": "강희준",
+				"foodOrder":[
+					{
+						"itemName": "치킨",
+				    "quantity": 4,
+				    "price": 20000
+				  }
+				]
+			}
+			]
+		}
+}
