@@ -1,0 +1,38 @@
+{
+	"foodRoomLeader":
+		{
+			"restaurant_name": "BHC",
+			"minUser": 4, 
+			"deadline":"2025:07:07TZ15:30:00",
+			"deliveryFee": 10000,
+			"user":[{
+				"userId": 2101008,
+				"userName": "강희준",
+				"foodOrder":[
+					{
+						"itemName": "치킨",
+				    "quantity": 4,
+				    "price": 20000
+				  },
+
+          {
+						"itemName": "뿌링클",
+				    "quantity": 1,
+				    "price": 24000
+				  }
+				]
+			},
+      {
+				"userId": 2401076,
+				"userName": "박효진",
+				"foodOrder":[
+					{
+						"itemName": "뿌링클 순살",
+				    "quantity": 1,
+				    "price": 27000
+				  }
+				]
+      }
+			]
+		}
+}
