@@ -1,7 +1,7 @@
 {
 	"foodFareRoom":
 		{
-			"restaurant_id": 3 ,
+			"restaurant_id": 2,
 			"min_member": 4, 
 			"deadline":"2025:07:07TZ15:30:00"
 		}
