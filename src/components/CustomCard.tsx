@@ -1,5 +1,5 @@
 // components/CustomCard.tsx
-import React, from 'react';
+import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { formatDeadline } from '../utils/formatDeadline';
 import { hp, wp } from '../utils/resposive';
