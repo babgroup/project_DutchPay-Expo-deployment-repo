@@ -1,31 +1,33 @@
+import { useRouter } from 'expo-router';
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { hp, wp } from '../utils/resposive';
 
-//상위 컴포넌트로부터 받아올 props의 타입 정의
 type CustomButtonProps = {
   backgroundColor?: string;
   textColor?: string;
-  width?: string | number;
-  height?: string | number;
+  width?: any;
+  height?: any;
   buttonText?: string;
-}; 
+  screenAddr?: string;
+};
 
 const CustomButton = ({
-  backgroundColor = '#FFFFFF',
-  textColor = 'black',
+  backgroundColor = 'orange',
+  textColor = 'white',
   width = wp(60),
   height = hp(7),
   buttonText = '버튼',
+  screenAddr = '/index',
 }: CustomButtonProps) => {
+  const router = useRouter();
+
   return (
     <TouchableOpacity
+      onPress={() => router.push(screenAddr!)}
       style={[styles.button, { backgroundColor, width, height }]}
-      // 수정
     >
-      <Text style={[styles.buttonText, { color: textColor }]}>
-        {buttonText}
-      </Text>
+      <Text style={{ color: textColor }}>{buttonText}</Text>
     </TouchableOpacity>
   );
 };
@@ -37,9 +39,6 @@ const styles = StyleSheet.create({
     marginTop: 20,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  buttonText: {
-    fontSize: wp(4),
   },
 });
 
