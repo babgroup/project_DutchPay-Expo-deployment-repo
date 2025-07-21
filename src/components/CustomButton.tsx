@@ -24,7 +24,7 @@ const CustomButton = ({
 
   return (
     <TouchableOpacity
-      onPress={() => router.push(screenAddr!)}
+      onPress={() => router.push(screenAddr)}
       style={[styles.button, { backgroundColor, width, height }]}
     >
       <Text style={{ color: textColor }}>{buttonText}</Text>

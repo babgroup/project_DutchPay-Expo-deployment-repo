@@ -16,6 +16,7 @@ export default function SearchBar({
   placeholder = '검색어를 입력하세요',
   onSubmitEditing,
 }: SearchBarProps) {
+  
   return (
     <View style={styles.searchBox}>
       <Ionicons

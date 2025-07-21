@@ -2,16 +2,21 @@ import CustomCard from '@/src/components/CustomCard';
 import SearchBar from '@/src/components/SearchBar';
 import currentFoodRooms from '@/src/mocks/restaurant/CurrentRooms.json';
 import { hp, wp } from '@/src/utils/resposive';
-import { router } from 'expo-router';
-import React, { useMemo, useState } from 'react';
+import { useRouter } from 'expo-router';
+import { useMemo, useState } from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function DeliveryHome() {
+  const router = useRouter();
+
   const [query, setQuery] = useState('');
 
   const roomList = currentFoodRooms.currentFoodRooms;
 
+  //useMemo: 반복되면 비효율적인 연산을 “메모이제이션” 
+  //query, roomList가 변경될 경우에만 filtered 값 재계산 = 검색어가 바뀔 떄 혹은 룸 리스트가 바뀔 때 만 재연산
+  //검색 창에 글을 하나하나 적을 때 마다 필터링 해서 검색 버튼을 누르지 않아도 즉시 동작 하도록👍
   const filtered = useMemo(() => {
     if (!query) return roomList;
     const lower = query.toLowerCase();
@@ -27,8 +32,8 @@ export default function DeliveryHome() {
         <Text style={styles.smallTitle}>배달비 부담은 낮추고, 포만감은 2배로!</Text>
       </View>
       <SearchBar
-        value={query}
-        onChangeText={setQuery}
+        value={query} //검색바 컴포넌트에 value 로 query(검색창에 입력된 값)넘기기, 검색창에 값 표시 하는 역할만
+        onChangeText={setQuery} 
         placeholder="가게 이름을 검색하세요"
       />
       <View style={styles.listContainer}>
@@ -39,7 +44,7 @@ export default function DeliveryHome() {
           <CustomCard
             room={item}
             onPress={() => {
-              { router.push(`/restaurant/create-food-room`) }
+              { router.push('') }
             }}
           />
         )}
@@ -47,8 +52,8 @@ export default function DeliveryHome() {
         ListEmptyComponent={
           <Text style={{ color: '#aaa', padding: 20, textAlign: 'center' }}>
             검색 결과가 없습니다.
-          </Text>
-        }
+          </Text> 
+        } //컨텐츠가 없을 때 텍스트 반환
       />
       </View>
     </SafeAreaView>

@@ -4,20 +4,21 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { formatDeadline } from '../utils/formatDeadline';
 import { hp, wp } from '../utils/resposive';
 
-// 현재 JSON 구조와 맞는 타입 정의
+// 현재 더미 JSON 구조와 맞는 타입 -> 나중에 서버 api와 연결 시 변경 필요한 부분은 변경 하기
 interface Room {
   id: number;
   restaurantName: string;
   deliveryFee: number;
-  maxUser?: number;
-  currentUsers?: number;
-  deadline?: string;
-  imageUrl?: string;
+  maxUser: number; 
+  currentUsers: number;
+  deadline: string;
+  imageUrl: string;
 }
 
+// 카드 컴포넌트 자체에 쓰이는 타입은 따로 지정 해두기
 interface CustomCardProps {
   room: Room;
-  onPress: () => void; //return 값 필요 X
+  onPress: () => void; //return 값 필요 X 라서 void 
   width?: number | string;
   height?: number | string;
 }
@@ -38,9 +39,11 @@ export default function CustomCard({
     imageUrl,
   } = room;
 
+  // 인당 배달비 계산 로직
   const deliveryPerPerson =
     deliveryFee && maxUser ? Math.floor(deliveryFee / maxUser) : null;
 
+  // 안당 배달비와 원래 배달비 할인율 계산 로직
   const discountPercent =
     deliveryPerPerson && deliveryFee
       ? 100 - Math.floor((deliveryPerPerson / deliveryFee) * 100)
@@ -74,7 +77,7 @@ export default function CustomCard({
 
       <View style={styles.imageBox}>
         <Image
-          source={{ uri: imageUrl || 'https://via.placeholder.com/100' }}
+          source={{ uri: imageUrl || '기본 사진 나중에 넣기' }}
           style={styles.image}
           resizeMode="cover"
         />

@@ -3,11 +3,14 @@ import { useRouter } from 'expo-router';
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-type CustomHeader = {
+type CustomHeaderProps = {
   title: string
 }
 
-export default function CustomHeader({ title = '기본 제목' }) {
+// 스크린 별로 제목 받아와서 보여주기
+
+export default function CustomHeader({ title = '기본 제목' } : CustomHeaderProps) {
+
   const router = useRouter();
 
   return (
