@@ -1,4 +1,4 @@
-import CustomCard from '@/src/components/CustomCard';
+import CustomCard from '@/src/components/CustomRestaurantCard';
 import SearchBar from '@/src/components/SearchBar';
 import currentFoodRooms from '@/src/mocks/restaurant/CurrentRooms.json';
 import { hp, wp } from '@/src/utils/resposive';
