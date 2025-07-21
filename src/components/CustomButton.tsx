@@ -6,8 +6,8 @@ import { hp, wp } from '../utils/resposive';
 type CustomButtonProps = {
   backgroundColor?: string;
   textColor?: string;
-  width?: any;
-  height?: any;
+  width?: number;
+  height?: number;
   buttonText?: string;
   screenAddr?: string;
 };
