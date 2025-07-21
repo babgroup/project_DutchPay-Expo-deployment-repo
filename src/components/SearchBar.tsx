@@ -7,16 +7,14 @@ type SearchBarProps = {
   value: string;
   onChangeText: (text: string) => void;
   placeholder?: string;
-  onSubmitEditing?: () => void;
 };
 
 export default function SearchBar({
   value,
   onChangeText,
   placeholder = '검색어를 입력하세요',
-  onSubmitEditing,
 }: SearchBarProps) {
-  
+
   return (
     <View style={styles.searchBox}>
       <Ionicons
@@ -34,7 +32,6 @@ export default function SearchBar({
         autoCapitalize="none"
         autoCorrect={false}
         clearButtonMode="while-editing"
-        onSubmitEditing={onSubmitEditing}
       />
     </View>
   );
