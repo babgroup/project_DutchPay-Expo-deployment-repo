@@ -1,18 +1,16 @@
 import { StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import CustomButton from '../../../src/components/CustomButton';
+import { getStatusColor } from '../../../src/utils/colors';
 import { hp, wp } from '../../../src/utils/resposive';
 
-
 export default function UserHome() {
-
   return (
-    <SafeAreaView 
-      style={styles.container}>
-        <CustomButton 
-          buttonText='Go to Home'
-          screenAddr='/index'
-          backgroundColor='#ff6f02' />
+    <SafeAreaView style={styles.container}>
+      <CustomButton 
+        buttonText='Go to Home'
+        screenAddr='/index'
+        backgroundColor={getStatusColor('orange')} />
     </SafeAreaView>
   );
 }
@@ -22,7 +20,7 @@ const styles = StyleSheet.create ({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#FFFF'
+    backgroundColor: getStatusColor('white')
   },
   mainTitle: {
     fontSize: wp(8),

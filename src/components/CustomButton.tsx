@@ -1,6 +1,7 @@
 import { useRouter } from 'expo-router';
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { getStatusColor } from '../utils/colors';
 import { hp, wp } from '../utils/resposive';
 
 type CustomButtonProps = {
@@ -13,8 +14,8 @@ type CustomButtonProps = {
 };
 
 const CustomButton = ({
-  backgroundColor = 'orange',
-  textColor = 'white',
+  backgroundColor = getStatusColor('gray'),
+  textColor = getStatusColor('white'),
   width = wp(60),
   height = hp(7),
   buttonText = '버튼',

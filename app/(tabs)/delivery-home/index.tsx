@@ -7,6 +7,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import CustomCard from '../../../src/components/CustomRestaurantCard';
 import SearchBar from '../../../src/components/SearchBar';
 import currentFoodRooms from '../../../src/mocks/restaurant/CurrentRooms.json';
+import { getStatusColor } from '../../../src/utils/colors';
 
 export default function DeliveryHome() {
   const { t } = useTranslation('delivery');
@@ -54,7 +55,7 @@ export default function DeliveryHome() {
         )}
         contentContainerStyle={{ padding: wp(4) }}
         ListEmptyComponent={
-          <Text style={{ color: '#aaa', padding: 20, textAlign: 'center' }}>
+          <Text style={{ color: getStatusColor('gray'), padding: 20, textAlign: 'center' }}>
             검색 결과가 없습니다.
           </Text> 
         } //컨텐츠가 없을 때 텍스트 반환
@@ -67,7 +68,7 @@ export default function DeliveryHome() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff',
+    backgroundColor: getStatusColor('white'),
   },
   bigTitle: {
     fontSize: wp(8),

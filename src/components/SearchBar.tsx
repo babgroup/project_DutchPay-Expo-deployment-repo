@@ -1,6 +1,7 @@
 import { Ionicons } from '@expo/vector-icons'; // 아이콘 사용 시
 import React from 'react';
 import { Platform, StyleSheet, TextInput, View } from 'react-native';
+import { getStatusColor } from '../utils/colors'; // Assuming you have this utility function
 import { hp, wp } from '../utils/resposive';
 
 type SearchBarProps = {
@@ -20,14 +21,14 @@ export default function SearchBar({
       <Ionicons
         name="search"
         size={wp(5.2)}
-        color="#aaa"
+        color={getStatusColor('dark-gray')}
         style={styles.searchIcon}
       />
       <TextInput
         value={value}
         onChangeText={onChangeText}
         placeholder={placeholder}
-        placeholderTextColor="#aaa"
+        placeholderTextColor={getStatusColor('dark-gray')}
         style={styles.searchInput}
         autoCapitalize="none"
         autoCorrect={false}
@@ -41,13 +42,13 @@ const styles = StyleSheet.create({
   searchBox: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#fdfdfd',
+    backgroundColor: getStatusColor('white'),
     borderRadius: wp(5),
     marginVertical: hp(1),
     marginHorizontal: wp(8),
     paddingHorizontal: wp(3),
     height: hp(5.5),
-    borderColor: '#e4e4e4',
+    borderColor: getStatusColor('gray'),
     borderWidth: 1,
   },
   searchIcon: {
@@ -56,7 +57,7 @@ const styles = StyleSheet.create({
   searchInput: {
     flex: 1,
     fontSize: wp(4),
-    color: '#222',
+    color: getStatusColor('black'),
     paddingVertical: Platform.OS === 'ios' ? hp(0.8) : 0,
   },
 });

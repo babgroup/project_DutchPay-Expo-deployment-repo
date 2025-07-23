@@ -1,11 +1,16 @@
 import { Ionicons } from '@expo/vector-icons';
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
+import { getStatusColor } from '../utils/colors';
 import { hp, wp } from '../utils/resposive';
 
 export default function CustomTabBar({ state, descriptors, navigation }:{state: any, descriptors: any, navigation: any}) {
 
   const currentRouteName = state.routes[state.index].name;
-  const showPlusBtn = currentRouteName === 'delivery-home' || currentRouteName === 'taxi-home';
+
+  // 배달 홈과 택시 홈에서만 플러스 버튼 보이기, includes로 처리
+  const showPlusBtn =
+    currentRouteName?.startsWith('delivery-home') ||
+    currentRouteName?.startsWith('taxi-home');
   
   // 수동 랜더링 순서 지정
   const renderOrder = [
@@ -26,8 +31,8 @@ export default function CustomTabBar({ state, descriptors, navigation }:{state: 
 
         // if 문으로 방 생성 버튼 별도로 처리 
         if (route.name === 'plus') {
-          if (!showPlusBtn) return null
-          else if (currentRouteName === 'delivery-home') {
+          if (!showPlusBtn) return null;
+          if (currentRouteName?.includes('delivery-home')) {
             return (
               <TouchableOpacity
                 key="plus"
@@ -36,12 +41,12 @@ export default function CustomTabBar({ state, descriptors, navigation }:{state: 
                 onPress={() => navigation.navigate('/restaurant/create-food-room')}
               >
                 <View style={styles.plusBtn}>
-                  <Ionicons name="add" size={wp(9)} color="#ff8600" />
+                  <Ionicons name="add" size={wp(9)} color={getStatusColor('orange')} />
                 </View>
               </TouchableOpacity>
             );
           }
-          else if (currentRouteName === 'taxi-home') {
+          if (currentRouteName?.includes('taxi-home')) {
             return (
               <TouchableOpacity
                 key="plus"
@@ -50,7 +55,7 @@ export default function CustomTabBar({ state, descriptors, navigation }:{state: 
                 onPress={() => navigation.navigate('/taxi/create-taxi-room')}
               >
                 <View style={styles.plusBtn}>
-                  <Ionicons name="add" size={wp(9)} color="#ff8600" />
+                  <Ionicons name="add" size={wp(9)} color={getStatusColor('orange')} />
                 </View>
               </TouchableOpacity>
             );
@@ -76,7 +81,7 @@ export default function CustomTabBar({ state, descriptors, navigation }:{state: 
             <Ionicons
               name={iconName}
               size={wp(7)}
-              color={isFocused ? '#ff8600' : '#222'} //선택 된 상태일 때 아이콘 색 주황색으로 변경
+              color={isFocused ? getStatusColor('orange') : getStatusColor('dark-gray')}
             />
           </TouchableOpacity>
         );
@@ -92,7 +97,7 @@ const styles = StyleSheet.create({
     right: wp(4),
     bottom: hp(2),
     height: hp(9),
-    backgroundColor: '#fff',
+    backgroundColor: getStatusColor('white'),
     borderRadius: hp(5),
     flexDirection: 'row',
     alignItems: 'center',
@@ -122,12 +127,12 @@ const styles = StyleSheet.create({
     width: wp(16),
     height: wp(16),
     borderRadius: wp(9),
-    backgroundColor: '#fff',
+    backgroundColor: getStatusColor('white'),
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 3,
-    borderColor: '#ff8600',
-    shadowColor: '#ff8600',
+    borderColor: getStatusColor('orange'),
+    shadowColor: getStatusColor('orange'),
     shadowOffset: { width: 0, height: 6 },
     shadowOpacity: 0.18,
     shadowRadius: 12,

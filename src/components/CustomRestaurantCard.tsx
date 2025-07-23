@@ -1,6 +1,7 @@
 // components/CustomCard.tsx
 import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { getStatusColor } from '../utils/colors';
 import { formatDeadline } from '../utils/formatDeadline';
 import { hp, wp } from '../utils/resposive';
 
@@ -96,8 +97,8 @@ const styles = StyleSheet.create({
     padding: wp(6),
     marginBottom: hp(2),
     alignItems: 'center',
-    backgroundColor: '#fff',
-    shadowColor: '#000',
+    backgroundColor: getStatusColor('white'),
+    shadowColor: getStatusColor('black'),
     shadowOpacity: 0.06,
     shadowOffset: { width: 0, height: 2 },
     shadowRadius: wp(4),
@@ -107,7 +108,7 @@ const styles = StyleSheet.create({
     fontSize: wp(6),
     fontWeight: 'semibold' ,
     marginBottom: hp(1.4),
-    color: '#000',
+    color: getStatusColor('black'),
   },
   fee: {
     fontSize: wp(3.6),
@@ -135,20 +136,20 @@ const styles = StyleSheet.create({
     width: wp(32),
     height: hp(15),
     borderRadius: wp(4),
-    backgroundColor: '#eee',
+    backgroundColor: getStatusColor('gray'),
   },
   discountBadge: {
     position: 'absolute',
     top: hp(1),
     right: wp(2),
-    backgroundColor: '#fff',
+    backgroundColor: getStatusColor('white'),
     paddingHorizontal: wp(2),
     height: hp(3),
     borderRadius: wp(3),
     alignItems: 'center',
     justifyContent: 'center',
     elevation: 2,
-    shadowColor: '#000',
+    shadowColor: getStatusColor('black'),
     shadowOpacity: 0.1,
     shadowRadius: 4,
     shadowOffset: { width: 0, height: 2 },
@@ -156,6 +157,6 @@ const styles = StyleSheet.create({
   discountText: {
     fontSize: wp(3),
     fontWeight: 'bold',
-    color: '#000',
+    color: getStatusColor('black'),
   },
 });
