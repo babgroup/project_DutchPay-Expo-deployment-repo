@@ -9,11 +9,11 @@ export default function TabLayout() {
         headerShown: false, // 각 화면에서 기본으로 보여주는 헤더 없애기
       }}
     >
-      <Tabs.Screen name="index" />
+      <Tabs.Screen name="main" />
       <Tabs.Screen name="delivery-home" />
       <Tabs.Screen name="plus" />
       <Tabs.Screen name="taxi-home" />
-      <Tabs.Screen name="user-page" />
+      <Tabs.Screen name="user-home" />
     </Tabs>
   );
 }

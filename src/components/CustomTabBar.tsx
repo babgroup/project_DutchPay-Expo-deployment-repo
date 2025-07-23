@@ -6,10 +6,23 @@ export default function CustomTabBar({ state, descriptors, navigation }:{state: 
 
   const currentRouteName = state.routes[state.index].name;
   const showPlusBtn = currentRouteName === 'delivery-home' || currentRouteName === 'taxi-home';
+  
+  // 수동 랜더링 순서 지정
+  const renderOrder = [
+    'main/index',
+    'delivery-home/index',
+    'plus',
+    'taxi-home/index',
+    'user-home/index'
+  ];
+  const orderedRoutes = renderOrder
+    .map(name => state.routes.find((route) => route.name === name))
+    .filter(Boolean);
 
   return (
     <View style={styles.tabBar}>
-      {state.routes.map((route: any, index: number) => {
+      {/* 지정해둔 순서 대로 아이콘 랜더링 */}
+      {orderedRoutes.map((route, index) => {
 
         // if 문으로 방 생성 버튼 별도로 처리 
         if (route.name === 'plus') {
@@ -43,16 +56,15 @@ export default function CustomTabBar({ state, descriptors, navigation }:{state: 
             );
           }
         }
-          
+        
+        // 아이콘 - 스크린 경로 매핑
+        let iconName = '';
+        if (route.name === 'main/index') iconName = 'home-outline';
+        else if (route.name === 'delivery-home/index') iconName = 'cart-outline';
+        else if (route.name === 'taxi-home/index') iconName = 'car-outline';
+        else if (route.name === 'user-home/index') iconName = 'person-outline';
 
-        // 아이콘 - 스크린 매핑
-        let iconName = 'home-outline';
-        if (route.name === 'index') iconName = 'home-outline';
-        else if (route.name === 'delivery-home') iconName = 'cart-outline';
-        else if (route.name === 'taxi-home') iconName = 'car-outline';
-        else if (route.name === 'user-page') iconName = 'person-outline';
-
-        const isFocused = state.index === index; 
+        const isFocused = route.key === state.routes[state.index].key;
 
         return (
           <TouchableOpacity
