@@ -1,6 +1,7 @@
 import { hp, wp } from '@/src/utils/resposive';
 import { useRouter } from 'expo-router';
 import { useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import CustomCard from '../../../src/components/CustomRestaurantCard';
@@ -8,6 +9,8 @@ import SearchBar from '../../../src/components/SearchBar';
 import currentFoodRooms from '../../../src/mocks/restaurant/CurrentRooms.json';
 
 export default function DeliveryHome() {
+  const { t } = useTranslation('delivery');
+  
   const router = useRouter();
 
   const [query, setQuery] = useState('');
@@ -28,8 +31,8 @@ export default function DeliveryHome() {
   return (
     <SafeAreaView style={styles.container}>
       <View>
-        <Text style={styles.bigTitle}>배달 Delivery</Text>
-        <Text style={styles.smallTitle}>배달비 부담은 낮추고, 포만감은 2배로!</Text>
+        <Text style={styles.bigTitle}>{t('bigTitle')}</Text>
+        <Text style={styles.smallTitle}>{t('smallTitle')}</Text>
       </View>
       <SearchBar
         value={query} //검색바 컴포넌트에 value 로 query(검색창에 입력된 값)넘기기, 검색창에 값 표시 하는 역할만

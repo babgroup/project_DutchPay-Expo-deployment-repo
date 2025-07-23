@@ -1,3 +1,4 @@
+import '@/src/locales/i18n';
 import { Stack } from 'expo-router';
 import React from 'react';
 
