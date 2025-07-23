@@ -1,12 +1,21 @@
 {
 	"currentFoodRooms":[
 		{
+      "id":1,
+			"restaurantName":"BHC",
+			"deliveryFee":10000,
+			"maxUser": 5,
+			"currentUsers":3,
+			"deadline":"2025-7-25T22:30:00",
+			"imageUrl":"http://example.com"
+		},
+		{
 			"id":2,
 			"restaurantName":"BHC",
 			"deliveryFee":10000,
 			"maxUser": 5,
 			"currentUsers":3,
-			"deadline":"2025:07:07TZ15:32:12",
+			"deadline":"2025-7-25T22:30:00",
 			"imageUrl":"http://example.com"
 		}
 	]
