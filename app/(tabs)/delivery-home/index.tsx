@@ -42,6 +42,7 @@ export default function DeliveryHome() {
       <View style={styles.listContainer}>
       <FlatList
         data={filtered}
+        initialNumToRender={6} // 초기 랜더링 할 아이템 개수 설정, 랜더링 최적화
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <CustomCard
