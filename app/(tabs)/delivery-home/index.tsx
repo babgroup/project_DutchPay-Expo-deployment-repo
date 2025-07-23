@@ -1,4 +1,4 @@
-import { hp, wp } from '@/src/utils/resposive';
+import { hp, wp } from '@/src/utils/responsive';
 import { useRouter } from 'expo-router';
 import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';

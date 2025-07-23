@@ -1,7 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import { getStatusColor } from '../utils/colors';
-import { hp, wp } from '../utils/resposive';
+import { hp, wp } from '../utils/responsive';
 
 export default function CustomTabBar({ state, descriptors, navigation }:{state: any, descriptors: any, navigation: any}) {
 

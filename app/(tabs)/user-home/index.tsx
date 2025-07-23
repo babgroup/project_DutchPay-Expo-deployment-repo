@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import CustomButton from '../../../src/components/CustomButton';
 import { getStatusColor } from '../../../src/utils/colors';
-import { hp, wp } from '../../../src/utils/resposive';
+import { hp, wp } from '../../../src/utils/responsive';
 
 export default function UserHome() {
   return (

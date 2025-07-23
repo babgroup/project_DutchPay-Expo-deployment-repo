@@ -3,7 +3,7 @@ import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { getStatusColor } from '../utils/colors';
 import { formatDeadline } from '../utils/formatDeadline';
-import { hp, wp } from '../utils/resposive';
+import { hp, wp } from '../utils/responsive';
 
 // 현재 더미 JSON 구조와 맞는 타입 -> 나중에 서버 api와 연결 시 변경 필요한 부분은 변경 하기
 interface Room {

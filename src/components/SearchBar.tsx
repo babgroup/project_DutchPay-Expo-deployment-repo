@@ -2,7 +2,7 @@ import { Ionicons } from '@expo/vector-icons'; // 아이콘 사용 시
 import React from 'react';
 import { Platform, StyleSheet, TextInput, View } from 'react-native';
 import { getStatusColor } from '../utils/colors'; // Assuming you have this utility function
-import { hp, wp } from '../utils/resposive';
+import { hp, wp } from '../utils/responsive';
 
 type SearchBarProps = {
   value: string;

@@ -2,7 +2,7 @@ import { useRouter } from 'expo-router';
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { getStatusColor } from '../utils/colors';
-import { hp, wp } from '../utils/resposive';
+import { hp, wp } from '../utils/responsive';
 
 type CustomButtonProps = {
   backgroundColor?: string;
