@@ -1,11 +1,11 @@
-import CustomCard from '@/src/components/CustomRestaurantCard';
-import SearchBar from '@/src/components/SearchBar';
-import currentFoodRooms from '@/src/mocks/restaurant/CurrentRooms.json';
 import { hp, wp } from '@/src/utils/resposive';
 import { useRouter } from 'expo-router';
 import { useMemo, useState } from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import CustomCard from '../../../src/components/CustomRestaurantCard';
+import SearchBar from '../../../src/components/SearchBar';
+import currentFoodRooms from '../../../src/mocks/restaurant/CurrentRooms.json';
 
 export default function DeliveryHome() {
   const router = useRouter();

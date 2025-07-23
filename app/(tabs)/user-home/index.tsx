@@ -1,10 +1,10 @@
-import CustomButton from '@/src/components/CustomButton';
 import { StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { hp, wp } from '../../src/utils/resposive';
+import CustomButton from '../../../src/components/CustomButton';
+import { hp, wp } from '../../../src/utils/resposive';
 
 
-export default function UserPage() {
+export default function UserHome() {
 
   return (
     <SafeAreaView 
