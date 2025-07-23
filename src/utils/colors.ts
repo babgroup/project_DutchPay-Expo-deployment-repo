@@ -12,7 +12,7 @@ export const getStatusColor = (status: string) => {
     case 'white':
       return '#FFFFFF'; // 흰색(배경 등)
 
-    case 'black':
+    case 'text-color':
       return '#000000'; // 검정색
   }
 };
